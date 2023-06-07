@@ -1,0 +1,17 @@
+.pokemon-image {
+    width: 300px; /* Tamaño deseado */
+    height: auto; /* Altura automática para mantener la proporción */
+    align-items: center;
+}
+
+.card {
+    align-items: center;
+}
+
+.card-title {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+.card-body {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+}
