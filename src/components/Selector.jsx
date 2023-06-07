@@ -44,12 +44,12 @@ const Pokegrid = () => {
     console.log(region)
 
     return (
-        <div>
+        <div className='app'>
 
             <br></br>
 
             <div className="generation-selector">
-                <label htmlFor="generation">Select Generation: </label>
+                <label htmlFor="generation">Select Generation:</label>
                 <select id="generation" value={generation} onChange={handleGenerationChange}>
                     <option value="1">Generation 1</option>
                     <option value="2">Generation 2</option>
@@ -63,27 +63,25 @@ const Pokegrid = () => {
                 </select>
             </div>
 
-            <br></br>
-
             {region && (
-                <h1 className="region-title">Region de {region} </h1>
+                <h1 className="region-title">Region: {region} </h1>
             )}
-
-            <br></br>
-
-            {pokemons.map((pokemon, index) => (
-                <div className="card" key={index}>
-                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} className="card-img-top pokemon-image" alt={pokemon.name} />
-                    <div className="card-body">
-                        <h5 className="card-title">{pokemon.name}</h5>
-                        <p className="card-text">Habitat: {pokemon.habitat ? pokemon.habitat.name : 'Desconocido'}</p>
-                        <p className="card-text">Capture Rate: {pokemon.capture_rate}</p>
-                        <p className="card-text">Pokedex National Number: {pokemon.pokedex_numbers[0].entry_number}</p>
-                        <p className="card-text">Pokedex {region} Number: {pokemon.pokedex_numbers[1].entry_number}</p>
-                    </div>
-                </div>
             
-            ))}
+            <div className='cards'>
+                {pokemons.map((pokemon, index) => (
+                    <div className="card" key={index}>
+                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} className="card-img-top pokemon-image" alt={pokemon.name} />
+                        <div className="card-body">
+                            <h5 className="card-title">{pokemon.name}</h5>
+                            <p className="card-text-habitat">Habitat: {pokemon.habitat ? pokemon.habitat.name : 'Desconocido'}</p>
+                            <p className="card-text">Capture Rate: {pokemon.capture_rate}</p>
+                            <p className="card-text">Pokedex National Number: {pokemon.pokedex_numbers[0].entry_number}</p>
+                            <p className="card-text">Pokedex {region} Number: {pokemon.pokedex_numbers[1].entry_number}</p>
+                        </div>
+                    </div>
+                
+                ))}
+                </div>
             </div>
         );
 };
