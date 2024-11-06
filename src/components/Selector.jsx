@@ -64,7 +64,9 @@ const Pokegrid = () => {
             </div>
 
             {region && (
-                <h1 className="region-title">Region: {region} </h1>
+                <div className="region-container">
+                    <h1 className="region-title">Region: {region} </h1>
+                </div> 
             )}
             
             <div className='cards'>
